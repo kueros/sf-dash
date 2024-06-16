@@ -65,7 +65,11 @@ Route::prefix('carriers')->namespace('App\Http\Controllers')->name('carriers/')-
 	Route::get('/{id}', 'CarriersController@index')->name('index');
 });
 
-Route::prefix('iflow_orders_data')->namespace('App\Http\Controllers')->name('iflow_orders_data/')->middleware('auth')->group(static function() {
+Route::prefix('order_in')->namespace('App\Http\Controllers')->name('order_in/')->middleware('auth')->group(static function () {
+	Route::get('/', 'OrderInController@index')->name('index');
+});
+
+Route::prefix('iflow_orders_data')->namespace('App\Http\Controllers')->name('iflow_orders_data/')->middleware('auth')->group(static function () {
 	Route::get('/', 'IflowOrdersDataController@index')->name('index');
 });
 

@@ -327,7 +327,7 @@ return [
 		],
 		[
 			'text' => 'orders',
-			'url' => 'iflow_orders_data',
+			'url' => 'order_in',
 			'icon' => 'fas fa-edit',
 		],
 		[

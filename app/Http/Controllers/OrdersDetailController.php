@@ -32,57 +32,19 @@ class OrdersDetailController extends Controller
 
 	public function index($request)
 	{
-
+		#dd($request);
 		$data =
-			IflowOrderData::select(
-				'iflow_order_data.id',
-				'iflow_order_data.order_id',
-				'iflow_order_data.tracking_id',
-				'iflow_order_data.shipment_id',
-				'iflow_order_data.print_url',
-				'iflow_order_data.code',
-				'order_in.order_nro',
-				'order_in.store',
-				'order_in.index_id',
-				'order_in.app_id',
-				'order_in.financial_status',
-				'order_in.fecha_creacion',
-				'order_data.first_name',
-				'order_data.address1',
-				'order_data.address2',
-				'order_data.phone',
-				'order_data.city',
-				'order_data.zip',
-				'order_data.province',
-				'order_data.country',
-				'order_data.last_name',
-				'order_data.name',
-				'order_data.province_code',
-				'order_data.note'
-			)
-			->leftJoin('order_in', 'iflow_order_data.order_id', '=', 'order_in.order_id')
-			->leftJoin('order_data', 'iflow_order_data.order_id', '=', 'order_data.order_id')
-			->where('iflow_order_data.order_id', $request)
+			DB::table('order_in')
+			->leftJoin('order_data', 'order_in.order_id', '=', 'order_data.order_id')
+			->where('order_in.order_id', '=', $request)
 			->first();
-
-		$producto =
-			IflowOrderData::select(
-				'iflow_order_data.order_id',
-				'order_prod.line_items_id',
-				'order_prod.line_items_quantity',
-                'order_prod.line_items_price',
-                'order_prod.line_items_sku',
-				'order_prod.depth',
-				'order_prod.height',
-                'order_prod.width'
-			)
-			->leftJoin('order_prod', 'iflow_order_data.order_id', '=', 'order_prod.order_id')
-			->where('iflow_order_data.order_id', $request)
-			->get();
-
-
-
-			#dd($data);
+					#dd($producto);
+		$producto = 
+				DB::table('order_in')
+				->leftJoin('order_prod', 'order_in.order_id', '=', 'order_prod.order_id')
+				->where('order_in.order_id', '=', $request)
+				->get();
+				#dd($data);
 		return view('admin.order_detail.index', ['data' => $data], ['producto' => $producto]);
 	}
 
