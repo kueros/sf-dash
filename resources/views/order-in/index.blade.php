@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="card">
-					<div class="card-header"><i class="fa fa-align-justify"></i> Ordenes
+					<div class="card-header"><i class="fa fa-align-justify"></i> ORDENES
 					</div>
 					<div class="card-body">
 						<div class="card-block">
@@ -29,11 +29,11 @@
 								<thead>
 									<th>Acciones</th>
 									<th>Id</th>
-									<th>Store</th>
-									<th>Tracking_id</th>
+									<th>Tienda</th>
+									<th>Tracking ID</th>
 									<th>Estado</th>
-									<th>Fecha_creacion</th>
-									<th>Shipment_id</th>
+									<th>Fecha Creacion</th>
+									<th>Shipment ID</th>
 									<th>Print url</th>
 								</thead>
 								<tbody>

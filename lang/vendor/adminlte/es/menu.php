@@ -4,6 +4,7 @@ return [
 
 	'main_navigation' => 'MENU PRINCIPAL',
 	'dashboard' => 'Dashboard',
+	'Back' => 'Volver',
 	'blog' => 'Blog',
 	'pages' => 'Páginas',
 	'account_settings' => 'AJUSTES DE LA CUENTA',

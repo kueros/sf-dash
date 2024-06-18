@@ -23,8 +23,11 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="card">
-					<div class="card-header">
-						Orden Nro: {{ $data->order_nro }}
+					<div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+						<div class="float-left">
+							<p class="float-left"><strong>ORDEN NRO: {{ $data->order_nro }}</strong></p><br />
+							<a class="btn btn-warning btn-sm card-title" href="{{ route('stores/index') }}"> {{ __('Volver') }}</a>
+						</div>
 					</div>
 					<div class="card-body">
 						<h5 class="card-title">Datos Generales</h5>
@@ -38,23 +41,23 @@
 			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-header">
-						Estados
-					</div>
-					<div class="card-body">
-						<h4 class="card-text"><strong> Pagado:</strong> {{ $data->financial_status ?? 'NO PAID' }}</h4>
-						<!--a href="#" class="btn btn-warning">Go somewhere</a-->
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="card-header">
 						Datos del cliente
 					</div>
 					<div class="card-body">
 						<h5 class="card-title">Datos Personales</h5>
 						<h4 class="card-text"><strong> Nombre:</strong> {{ $data->name }}</h4>
 						<h4 class="card-text"><strong> Teléfono:</strong> {{ $data->phone }}</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-header">
+						Estados
+					</div>
+					<div class="card-body">
+						<h4 class="card-text"><strong> Pagado:</strong> {{ $data->financial_status ?? 'NO PAID' }}</h4>
+						<!--a href="#" class="btn btn-warning">Go somewhere</a-->
 					</div>
 				</div>
 			</div>
